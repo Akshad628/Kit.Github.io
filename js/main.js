@@ -242,6 +242,7 @@ counters.forEach(c => counterObserver.observe(c));
 
 
 
+
 // 7. TESTIMONIALS 3D SLIDER (SEMI-AUTOMATIC)
 new Swiper(".mySwiper", {
     effect: "coverflow",
@@ -498,28 +499,27 @@ function sendToGmail() {
 }
 
 
-// MOBILE MENU LOGIC
+// 6. FIX: MOBILE MENU LOGIC (This was missing)
+// ==========================================
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
 
-// Toggle Menu
-mobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    // Change icon color if needed
-    mobileBtn.classList.toggle('text-[#C8102E]');
-});
-
-// Close menu when a link is clicked
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
+if(mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        // Optional: Toggle icon color
+        const icon = mobileBtn.querySelector('svg');
+        if(mobileMenu.classList.contains('open')) {
+            mobileBtn.style.color = "#C8102E";
+        } else {
+            mobileBtn.style.color = ""; // Reset
+        }
     });
-});
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-        mobileMenu.classList.remove('open');
-    }
-});
+    // Close when clicking a link
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    });
+}
