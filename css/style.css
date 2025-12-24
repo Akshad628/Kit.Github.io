@@ -357,4 +357,14 @@ body.loading {
 .swiper-slide-active .text-xs {
     color: #ffffff !important;
     /* White text */
+
+}
+
+
+
+/* Mobile Menu Open State */
+#mobile-menu.open {
+    display: flex !important;
+    transform: scaleY(1);
+    opacity: 1;
 }
