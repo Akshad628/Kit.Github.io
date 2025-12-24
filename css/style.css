@@ -1,0 +1,360 @@
+/* Core Settings */
+:root {
+    --brand-red: #C8102E;
+    --dark: #0a0a0a;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Animations */
+
+/* 1. Reveal Text (Slide up and fade) */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Reveal Fade (Simple fade in) */
+.reveal-fade {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.reveal-fade.active {
+    opacity: 1;
+}
+
+/* 3. Reveal Slide Sides */
+.reveal-slide-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-slide-left {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-slide-right.active,
+.reveal-slide-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 35s linear infinite;
+}
+
+.animate-marquee2 {
+    animation: marquee2 35s linear infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulse-slow {
+
+    0%,
+    100% {
+        opacity: 0.08;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.12;
+        transform: scale(1.1);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+}
+
+
+/* Navbar Active State (Red Capsule) */
+.nav-active {
+    background-color: #7A0000;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* THE FIX: When hovering over the Red Capsule, turn it Black */
+.nav-active:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    /* Optional: nice subtle lift */
+}
+
+/* Chat Window Toggle States */
+#chat-window.open {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Service Card 3D Depth */
+.service-card {
+    will-change: transform, filter, opacity;
+}
+
+
+
+/* Swiper Slide Styles */
+.swiper-slide {
+    transition: all 0.5s ease;
+    filter: blur(4px);
+    /* Default: Blurry */
+    opacity: 0.4;
+    /* Default: Faded */
+    transform: scale(0.85);
+}
+
+/* The Active Card (Center) */
+.swiper-slide-active {
+    filter: blur(0px) !important;
+    /* Clear */
+    opacity: 1 !important;
+    /* Fully Visible */
+    transform: scale(1);
+    z-index: 20;
+}
+
+/* Pagination Dots color */
+.swiper-pagination-bullet-active {
+    background-color: #C8102E !important;
+}
+
+
+
+/* Swiper Styles */
+.swiper {
+    overflow: visible !important;
+    /* Critical fix for clipping */
+}
+
+.swiper-slide {
+    transition: all 0.5s ease;
+    filter: blur(4px);
+    /* Background cards are blurry */
+    opacity: 0.4;
+    transform: scale(0.85);
+    height: auto;
+}
+
+.swiper-slide-active {
+    filter: blur(0px) !important;
+    opacity: 1 !important;
+    transform: scale(1);
+    /* Active card is full size */
+    z-index: 20;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    /* Nice Drop Shadow */
+}
+
+/* Custom Navigation Button Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: inherit;
+    width: 50px;
+    height: 50px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.2rem !important;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet-active {
+    background-color: #C8102E !important;
+}
+
+
+
+/* Chatbot Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Custom Scrollbar for Chat */
+#chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 20px;
+}
+
+
+/* Hide scrollbar during load if needed, handled by JS mostly but good backup */
+body.loading {
+    overflow: hidden;
+}
+
+
+
+/* FIX: Forces GPU rendering to stabilize the blur effect and prevent lines */
+#nav-container {
+    /* A semi-transparent gradient simulates the "shine" of glass without the heavy math */
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.85) 0%,
+            rgba(255, 255, 255, 0.95) 100%);
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 0 rgba(255, 255, 255, 1);
+    /* Inner highlight */
+
+    backdrop-filter: none;
+    /* Turn off the buggy feature */
+}
+
+/* Optional: Ensures items don't have stray borders */
+.nav-item {
+    outline: none;
+    border: none;
+}
+
+/*preloader*/
+#loader-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 1;
+    max-width: 100px;
+    transform: translateZ(0);
+    /* The squeeze takes 2 seconds */
+    transition: all 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.letter.squeeze {
+    max-width: 0px;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 1. FORCE PROPER STACKING (Fixes "See-Through" issue) */
+.swiper-slide {
+    z-index: 0 !important;
+    /* Push inactive cards to the back */
+    opacity: 1 !important;
+    /* Ensure they are solid, not transparent */
+}
+
+.swiper-slide-active {
+    z-index: 50 !important;
+    /* Force active card to the very front */
+    opacity: 1 !important;
+    transform: scale(1.05);
+    /* Optional: Slight pop for the active card */
+}
+
+/* 2. COLOR FLIP LOGIC (As requested previously) */
+
+/* INACTIVE CARDS (Background): White Card / Dark Text */
+.swiper-slide {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    /* Light border */
+    transition: all 0.4s ease-in-out !important;
+    /* Smooth color swap */
+}
+
+/* Target text inside inactive cards */
+.swiper-slide p,
+.swiper-slide h4,
+.swiper-slide .text-xs {
+    color: #0f172a !important;
+    /* Slate-900 text */
+}
+
+/* ACTIVE CARD (Foreground): Dark Card / White Text */
+.swiper-slide-active {
+    background-color: #0f172a !important;
+    /* Slate-900 background */
+    border: 1px solid #334155 !important;
+    /* Darker border */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    /* Deep shadow */
+}
+
+/* Target text inside active card */
+.swiper-slide-active p,
+.swiper-slide-active h4,
+.swiper-slide-active .text-xs {
+    color: #ffffff !important;
+    /* White text */
+}
