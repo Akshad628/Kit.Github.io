@@ -494,4 +494,32 @@ function sendToGmail() {
 
     // 5. Open
     window.open(gmailUrl, '_blank');
+
 }
+
+
+// MOBILE MENU LOGIC
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+// Toggle Menu
+mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    // Change icon color if needed
+    mobileBtn.classList.toggle('text-[#C8102E]');
+});
+
+// Close menu when a link is clicked
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+    }
+});
