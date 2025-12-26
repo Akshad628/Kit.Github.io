@@ -216,13 +216,6 @@ html.lenis {
     background-color: #C8102E !important;
 }
 
-/* FIX: Testimonial Slide Sizing */
-.swiper-slide {
-    width: 85% !important; /* Mobile: Show part of next slide */
-    max-width: 600px;      /* Desktop: Cap width */
-    height: auto;          /* Allow content to determine height */
-    flex-shrink: 0;        /* Prevent shrinking */
-}
 
 
 /* Chatbot Animations */
@@ -364,14 +357,4 @@ body.loading {
 .swiper-slide-active .text-xs {
     color: #ffffff !important;
     /* White text */
-
-}
-
-
-
-/* Mobile Menu Open State */
-#mobile-menu.open {
-    display: flex !important;
-    transform: scaleY(1);
-    opacity: 1;
 }

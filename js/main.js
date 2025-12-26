@@ -36,13 +36,15 @@ const elementsToReveal = document.querySelectorAll('.reveal-text, .reveal-fade, 
 elementsToReveal.forEach(el => revealObserver.observe(el));
 
 
-// 3. NAVBAR ACTIVE STATE & CLICK LOGIC
+// 3. NAVBAR ACTIVE STATE & CLICK LOGIC (UPDATED WITH LOGO SWAP)
 const navbar = document.getElementById('navbar');
 const navInner = document.getElementById('nav-inner');
 const navLinks = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('section, footer');
-// NEW: Select the brand text element
-const brandText = document.getElementById('brand-text');
+
+// NEW: Select the two logo images
+const logoHome = document.getElementById('logo-home');
+const logoScroll = document.getElementById('logo-scroll');
 
 function updateActiveLink() {
     let current = '';
@@ -78,9 +80,9 @@ window.addEventListener('scroll', () => {
         // Navbar becomes white glass
         navbar.classList.add('backdrop-blur-md', 'bg-white/80', 'shadow-sm');
 
-        // Brand Text becomes Dark (Slate-900)
-        brandText.classList.remove('text-white');
-        brandText.classList.add('text-slate-900');
+        // LOGO SWAP: Hide Home Logo, Show Scroll Logo
+        if (logoHome) logoHome.classList.replace('opacity-100', 'opacity-0');
+        if (logoScroll) logoScroll.classList.replace('opacity-0', 'opacity-100');
 
     } else {
         // TOP (HOME) STATE
@@ -90,13 +92,14 @@ window.addEventListener('scroll', () => {
         // Navbar becomes transparent
         navbar.classList.remove('backdrop-blur-md', 'bg-white/80', 'shadow-sm');
 
-        // Brand Text becomes White
-        brandText.classList.add('text-white');
-        brandText.classList.remove('text-slate-900');
+        // LOGO SWAP: Show Home Logo, Hide Scroll Logo
+        if (logoHome) logoHome.classList.replace('opacity-0', 'opacity-100');
+        if (logoScroll) logoScroll.classList.replace('opacity-100', 'opacity-0');
     }
 
     updateActiveLink();
 });
+
 
 // ... Keep your click handlers as they were ...
 
@@ -239,7 +242,6 @@ const startCounters = (entries, observer) => {
 };
 const counterObserver = new IntersectionObserver(startCounters, { threshold: 0.5 });
 counters.forEach(c => counterObserver.observe(c));
-
 
 
 
@@ -441,39 +443,56 @@ document.addEventListener("DOMContentLoaded", () => {
         if (progress === 100) {
             clearInterval(interval);
 
-            // Wait 0.8s so user sees "100%" clearly (Increased from 1ms for better UX)
+            // PHASE 1: Wait 0.8s, then Morph "KRISINTEK" -> "KITS."
             setTimeout(() => {
-
-                // --- LOGIC TO FORM "KITS." ---
-                // 1. Swap letters to form "KITS"
-                spans[3].innerText = 'T'; // Was 'S', now 'T'
-                spans[6].innerText = 'S'; // Was 'T', now 'S'
-
-                // 2. Turn the final 'K' (index 8) into a '.'
+                // Swap letters
+                spans[3].innerText = 'T';
+                spans[6].innerText = 'S';
                 spans[8].innerText = '.';
 
-                // 3. Identify letters to squeeze out
-                // We REMOVED index 8 from this list so the dot stays visible.
-                // Remove: R(1), I(4), N(5), E(7)
+                // Squeeze out the extras
                 const indicesToRemove = [1, 4, 5, 7];
-
                 spans.forEach((span, index) => {
                     if (indicesToRemove.includes(index)) {
                         span.classList.add('squeeze');
                     }
                 });
 
-                // --- EXIT ANIMATION ---
-                // Wait 2000ms total (2s for animation + 2s pause)
+                // PHASE 2: Hold "KITS." for 2 seconds, then transition to Tagline
                 setTimeout(() => {
-                    preloader.style.transition = "transform 1.5s ease-in-out";
-                    preloader.style.transform = "translateY(-100%)";
-                }, 2000);
 
-            }, 800);
+                    // A. Fade out "KITS."
+                    loaderText.style.transition = "opacity 0.5s ease";
+                    loaderText.style.opacity = "0";
+
+                    // B. Wait for fade out, then swap text
+                    setTimeout(() => {
+                        // Insert new tagline with specific styling
+                        loaderText.innerHTML = `
+                            <span class="text-3xl md:text-3xl font-light tracking-[0.2em] text-white uppercase">
+                                Engineering <span class="text-[#C8102E] font-bold">Excellence</span>
+                            </span>
+                        `;
+
+                        // Fade in the Tagline
+                        loaderText.style.opacity = "1";
+
+                        // PHASE 3: Hold Tagline for 2.5 seconds, then Open Site
+                        setTimeout(() => {
+                            preloader.style.transition = "transform 1.5s cubic-bezier(0.76, 0, 0.24, 1)";
+                            preloader.style.transform = "translateY(-100%)";
+                        }, 2000); // READ TIME: 2.5 seconds
+
+                    }, 300); // FADE TIME: 0.5 seconds
+
+                }, 2000); // HOLD "KITS.": 2 seconds
+
+            }, 700); // INITIAL DELAY
         }
     }, 30);
 });
+
+
 
 
 //10 send message fix
@@ -491,35 +510,70 @@ function sendToGmail() {
     const body = message;
 
     // 4. Construct Link
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=careersKrisintek@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@krisintek.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // 5. Open
     window.open(gmailUrl, '_blank');
-
 }
 
 
-// 6. FIX: MOBILE MENU LOGIC (This was missing)
-// ==========================================
-const mobileBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
 
-if(mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-        // Optional: Toggle icon color
-        const icon = mobileBtn.querySelector('svg');
-        if(mobileMenu.classList.contains('open')) {
-            mobileBtn.style.color = "#C8102E";
-        } else {
-            mobileBtn.style.color = ""; // Reset
+
+
+
+
+// 11. TERMINAL TYPING EFFECT
+const terminalContent = document.getElementById('terminal-content');
+if (terminalContent) {
+    const logs = [
+        { text: "> ESTABLISHING SECURE CONNECTION...", color: "text-gray-400" },
+        { text: "> ACCESSING NEURAL_NET_V5 [ROOT]", color: "text-white" },
+        { text: "> ...", color: "text-gray-500" },
+        { text: "> BYPASSING FIREWALL... SUCCESS", color: "text-green-400" },
+        { text: "> LOAD MODULE: AGENTIC_AI_WORKFORCE", color: "text-white" },
+        { text: "> OPTIMIZING VECTORS... 99.9%", color: "text-blue-400" },
+        { text: "> SCANNING FOR VULNERABILITIES...", color: "text-gray-400" },
+        { text: "> 0 THREATS DETECTED. ZERO_TRUST ACTIVE.", color: "text-green-400" },
+        { text: "> INITIATING DEPLOYMENT SEQUENCE...", color: "text-[#C8102E]" },
+        { text: "> WELCOME TO KRISINTEK.", color: "text-white font-bold" }
+    ];
+
+    let logIndex = 0;
+    let charIndex = 0;
+
+    function typeLog() {
+        if (logIndex < logs.length) {
+            const currentLog = logs[logIndex];
+
+            // Create a new line if it's the start of a log
+            if (charIndex === 0) {
+                const line = document.createElement('div');
+                line.className = `${currentLog.color} font-mono tracking-wide`;
+                line.id = `log-${logIndex}`;
+                terminalContent.appendChild(line);
+            }
+
+            // Type character
+            const lineElement = document.getElementById(`log-${logIndex}`);
+            lineElement.textContent += currentLog.text.charAt(charIndex);
+            charIndex++;
+
+            // Scroll to bottom
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+
+            // Check if line finished
+            if (charIndex < currentLog.text.length) {
+                // Random typing speed for realism (20ms to 80ms)
+                setTimeout(typeLog, Math.random() * 60 + 20);
+            } else {
+                // Line finished, wait before next line
+                charIndex = 0;
+                logIndex++;
+                setTimeout(typeLog, 400);
+            }
         }
-    });
+    }
 
-    // Close when clicking a link
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    });
+    // Start typing after a short delay (e.g., after preloader)
+    setTimeout(typeLog, 2500);
 }

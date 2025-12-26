@@ -22,48 +22,61 @@
         style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
 
     <header id="navbar" class="fixed top-0 w-full z-[100] transition-all duration-500 border-b border-transparent">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-12 relative"> <div class="flex justify-between items-center h-24 transition-all duration-300" id="nav-inner">
-            <div class="flex-shrink-0 cursor-pointer group">
-                <span id="brand-text"
-                    class="text-2xl font-extrabold tracking-tighter group-hover:opacity-80 transition-colors duration-300 text-white">
-                    KITS<span class="text-[#C8102E]">.</span>
-                </span>
-            </div>
+        <nav class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24 transition-all duration-300" id="nav-inner">
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <div class="relative w-64 h-20 flex items-center justify-start"> <img src="assets/KITShomelogo3.png"
+                            id="logo-home" alt="KITS Logo"
+                            class="absolute left-0 top-0 w-full h-full object-contain transition-opacity duration-500 opacity-100">
 
-            <div id="nav-container"
-                class="hidden xl:flex items-center p-1.5 rounded-full transition-all duration-300">
-                <a href="#home" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Home</a>
-                <a href="#about" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">About</a>
-                <a href="#services" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Services</a>
-                <a href="#clients" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Clients</a>
-                <a href="#careers" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Careers</a>
-                <a href="#contact" class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Contact</a>
-            </div>
+                        <img src="assets/KITSothersectionlogo.png" id="logo-scroll" alt="KITS Logo Dark"
+                            class="absolute left-0 top-0 w-full h-full object-contain transition-opacity duration-500 opacity-0">
 
-            <div class="xl:hidden flex items-center">
-                <button id="mobile-menu-btn" class="p-2 text-white hover:text-[#C8102E] transition-colors">
-                    <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
+                    </div>
+                </div>
 
-        <div id="mobile-menu" class="absolute top-24 left-0 w-full bg-white border-t border-slate-100 shadow-xl hidden flex-col items-center py-8 space-y-6 xl:hidden transition-all duration-300 origin-top transform scale-y-0 opacity-0">
-             <a href="#home" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">Home</a>
-             <a href="#about" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">About</a>
-             <a href="#services" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">Services</a>
-             <a href="#clients" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">Clients</a>
-             <a href="#careers" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">Careers</a>
-             <a href="#contact" class="mobile-link text-sm font-bold tracking-widest uppercase text-slate-900 hover:text-[#C8102E]">Contact</a>
-        </div>
-    </nav>
-</header>
+                <div id="nav-container"
+                    class="hidden xl:flex items-center p-1.5 rounded-full transition-all duration-300">
+                    <a href="#home"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Home</a>
+                    <a href="#about"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">About</a>
+                    <a href="#services"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Services</a>
+                    <a href="#clients"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Clients</a>
+                    <a href="#careers"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Careers</a>
+                    <a href="#contact"
+                        class="nav-item text-[11px] font-bold tracking-widest uppercase text-slate-600 hover:text-black px-6 py-3 rounded-full transition-all duration-300">Contact</a>
+                </div>
+
+                <div class="xl:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-900 hover:text-[#C8102E] transition-colors">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <main class="relative z-10">
         <!--hero section-->
-        <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+        <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[#0a0a0a]">
+
+            <!-- <div id="hero-bg-wrapper" class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+                <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-r from-black via-[#0a0a0a] to-transparent z-10"></div>
+                <div
+                    class="absolute top-1/2 right-0 -translate-y-1/2 w-[800px] h-[800px] bg-[#C8102E] rounded-full blur-[150px] opacity-10 animate-pulse-slow">
+                </div>
+            </div> -->
+
+            <!--background using 1111.png-->
             <div id="hero-bg-wrapper" class="absolute inset-0 z-0 overflow-hidden">
                 <img src="assets/1111.png" id="hero-img"
                     class="w-full h-full object-cover opacity-60 scale-105 transition-transform duration-[2s]"
@@ -71,53 +84,77 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0a0a0a]"></div>
             </div>
 
-            <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-10">
-                <div
-                    class="reveal-fade inline-flex items-center gap-2 px-4 py-2 mb-8 text-[10px] font-bold tracking-[0.3em] text-white/80 uppercase bg-white/5 backdrop-blur-md border border-white/10 rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-[#C8102E] animate-pulse"></span>
-                    Innovating Since 2017
+
+
+            <div
+                class="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-20">
+
+                <div class="text-left">
+                    <div
+                        class="reveal-fade inline-flex items-center gap-2 px-4 py-2 mb-6 text-[10px] font-bold tracking-[0.3em] text-[#C8102E] uppercase bg-red-500/5 border border-red-500/20 rounded-full">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#C8102E] animate-pulse"></span>
+                        System Status: Online
+                    </div>
+
+                    <h1
+                        class="reveal-text text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 tracking-tighter leading-[0.9]">
+                        Global <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500">Intelligence.</span>
+                    </h1>
+
+                    <p class="reveal-fade delay-100 max-w-xl text-lg text-gray-400 mb-10 leading-relaxed font-light">
+                        We don't just predict the future; we compile it. From <b>Self-Healing Cyber Defense</b> to
+                        <b>Agentic AI Workforces</b>, we modernize the world's most complex workflows.
+                    </p>
+
+                    <div class="reveal-fade delay-200 flex flex-wrap gap-4">
+                        <a href="#services"
+                            class="group relative px-8 py-4 bg-[#C8102E] text-white rounded-full font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(200,16,46,0.5)]">
+                            <span class="relative text-[11px] tracking-widest uppercase flex items-center gap-2">
+                                Initialize Protocol
+                                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#about"
+                            class="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold hover:bg-white hover:text-black transition-all uppercase text-[11px] tracking-widest hover:scale-105 backdrop-blur-sm">
+                            View Source
+                        </a>
+                    </div>
                 </div>
 
-                <h1
-                    class="reveal-text text-6xl md:text-9xl font-extrabold text-white mb-8 tracking-tighter leading-[0.9]">
-                    Global<br>
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">Intelligence.</span>
-                </h1>
+                <div class="reveal-slide-left relative w-full max-w-lg mx-auto lg:mr-0">
+                    <div
+                        class="bg-[#0f0f0f]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
 
-                <p
-                    class="reveal-fade delay-100 max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-12 leading-relaxed font-light">
-                    We modernize complex workflows with precision-engineered solutions, connecting top-tier talent with
-                    world-class technology.
-                </p>
-
-                <div class="reveal-fade delay-200 flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#services"
-                        class="group relative px-8 py-4 bg-[#C8102E] text-white rounded-full font-bold overflow-hidden transition-all hover:scale-105">
-                        <div
-                            class="absolute inset-0 w-full h-full bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <div class="bg-white/5 px-4 py-3 flex items-center justify-between border-b border-white/5">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                            </div>
+                            <div class="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+                                root@krisintek-core:~</div>
                         </div>
-                        <span class="relative text-[11px] tracking-widest uppercase flex items-center gap-2">
-                            Explore Solutions
-                            <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </span>
-                    </a>
-                    <a href="#about"
-                        class="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold hover:bg-white hover:text-black transition-all uppercase text-[11px] tracking-widest hover:scale-105 backdrop-blur-sm">
-                        Our Vision
-                    </a>
-                </div>
-            </div>
 
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
+                        <div class="p-6 font-mono text-xs md:text-sm h-[320px] overflow-hidden relative">
+                            <div id="terminal-content" class="space-y-2"></div>
+                            <span class="inline-block w-2 h-4 bg-[#C8102E] animate-pulse ml-1 align-middle"></span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute -top-10 -right-10 w-24 h-24 border-t-2 border-r-2 border-[#C8102E]/20 rounded-tr-3xl -z-10">
+                    </div>
+                    <div
+                        class="absolute -bottom-10 -left-10 w-24 h-24 border-b-2 border-l-2 border-white/10 rounded-bl-3xl -z-10">
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -214,184 +251,259 @@
 
             <div class="max-w-6xl mx-auto px-6 space-y-24 pb-32">
 
-                <div
-                    class="service-card sticky top-24 bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div
-                            class="w-14 h-14 bg-red-50 text-[#C8102E] rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight">Strategic Staffing</h3>
-                        <p class="text-slate-500 leading-relaxed mb-8">We deploy high-impact talent aligned with your
-                            specific technical goals. Need a specialized architect or a full-scale agile squad? We
-                            deliver professionals who hit the ground running.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Contract-to-Hire</li>
-                            <li class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Direct Placement</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
+                <div class="max-w-6xl mx-auto px-6 space-y-24 pb-32">
 
-                <div
-                    class="service-card sticky top-28 bg-[#0a0a0a] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div
-                            class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
+                    <div
+                        class="service-card sticky top-20 bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-red-50 text-[#C8102E] rounded-2xl flex items-center justify-center mb-8">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight text-slate-900">Professional Services</h3>
+                            <p class="text-slate-500 leading-relaxed mb-8">
+                                Technology fails without strategy. We provide the <b>PMO Leadership</b> and <b>Business
+                                    Analysis</b> required to navigate complex digital transformations. We align your
+                                technical roadmap with tangible business KPIs using Agile and Lean methodologies.
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    IT Strategy & Roadmapping</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    Agile Transformation</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-[#C8102E]">
+                                    PMO as a Service</li>
+                            </ul>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight text-[#C8102E]">Digital Engineering</h3>
-                        <p class="text-slate-400 leading-relaxed mb-8">From cloud-native applications to robust DevOps
-                            pipelines. We leverage modern full-stack technologies to create scalable, secure, and
-                            user-centric digital experiences.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide">React
-                                & Node</li>
-                            <li class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide">AWS /
-                                Azure</li>
-                            <li
-                                class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-[#C8102E]">
-                                Kubernetes</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
-
-                <div
-                    class="service-card sticky top-32 bg-[#C8102E] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div class="w-14 h-14 bg-black/20 text-white rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
-                                </path>
-                            </svg>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight">Enterprise Solutions</h3>
-                        <p class="text-white/90 leading-relaxed mb-8">Streamline complex business processes with
-                            top-tier ERP implementations. We manage migration and optimization of critical business
-                            software.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide">SAP
-                                S/4HANA</li>
-                            <li class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Salesforce</li>
-                        </ul>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto bg-black/20">
-                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
 
-                <div
-                    class="service-card sticky top-36 bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div
-                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
-                                </path>
-                            </svg>
+                    <div
+                        class="service-card sticky top-24 bg-[#0a0a0a] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight text-[#C8102E]">AI & Cyber Workforce</h3>
+                            <p class="text-slate-400 leading-relaxed mb-8">
+                                Standard recruiting is obsolete. We specialize in headhunting niche talent for
+                                high-stakes domains. From <b>PhD-level Neural Network Researchers</b> to <b>Red Team
+                                    Cryptographers</b>, we deploy the architects of the next digital age.
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Prompt Engineering</li>
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Threat Hunters</li>
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    ML Ops Specialists</li>
+                            </ul>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight">AI & Data Intelligence</h3>
-                        <p class="text-slate-500 leading-relaxed mb-8">Turn raw data into actionable foresight. We help
-                            you harness the power of Predictive Analytics and Generative AI to drive smarter decisions
-                            and automate complex workflows.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li
-                                class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Python / ML</li>
-                            <li
-                                class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Gen AI</li>
-                            <li
-                                class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Big Data</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
-
-                <div
-                    class="service-card sticky top-40 bg-[#0a0a0a] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div
-                            class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight text-[#C8102E]">Quality Assurance</h3>
-                        <p class="text-slate-400 leading-relaxed mb-8">We implement rigorous automated testing
-                            frameworks that catch issues early, ensuring your product is flawless before it reaches the
-                            user. Quality is not an afterthought; it's our standard.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Selenium</li>
-                            <li class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Cypress</li>
-                            <li
-                                class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-[#C8102E]">
-                                API Automation</li>
-                        </ul>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
 
-                <div
-                    class="service-card sticky top-44 bg-[#C8102E] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div class="w-14 h-14 bg-black/20 text-white rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
-                                </path>
-                            </svg>
+                    <div
+                        class="service-card sticky top-28 bg-[#C8102E] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-black/20 text-white rounded-2xl flex items-center justify-center mb-8">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight">Cloud Engineering</h3>
+                            <p class="text-white/90 leading-relaxed mb-8">
+                                We build the backbone for intelligent systems. Our engineers design <b>Serverless
+                                    Architectures</b> capable of handling real-time LLM inference and edge-computing
+                                workloads, ensuring your infrastructure is AI-ready.
+                                <br>
+                                <br>
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Kubernetes for AI</li>
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Microservices</li>
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Edge Computing</li>
+                            </ul>
                         </div>
-                        <h3 class="text-4xl font-bold mb-6 tracking-tight">Cyber Security</h3>
-                        <p class="text-white/90 leading-relaxed mb-8">Protecting your digital assets with
-                            enterprise-grade security protocols. We offer vulnerability assessments, compliance
-                            management, and 24/7 security monitoring.</p>
-                        <ul class="flex gap-3 flex-wrap">
-                            <li class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide">Pen
-                                Testing</li>
-                            <li class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                SecOps</li>
-                            <li class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide">
-                                Compliance</li>
-                        </ul>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto bg-black/20">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
                     </div>
-                    <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto bg-black/20">
-                        <img src="https://images.unsplash.com/photo-1632910121591-29e2484c0259?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                </div>
 
-            </div>
+                    <div
+                        class="service-card sticky top-32 bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-red-50 text-[#C8102E] rounded-2xl flex items-center justify-center mb-8">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight text-slate-900">Autonomous Enterprise</h3>
+                            <p class="text-slate-500 leading-relaxed mb-8">
+                                Move beyond static ERPs. We implement <b>Hyperautomation</b> and <b>Process Mining</b>
+                                to create self-optimizing business workflows. We integrate AI agents directly into your
+                                SAP and Salesforce environments.
+                                <br>
+                                <br>
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    RPA & Bots</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    Predictive Analytics</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-[#C8102E]">
+                                    Intelligent ERP</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+
+                    <div
+                        class="service-card sticky top-36 bg-[#0a0a0a] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight text-[#C8102E]">Cognitive AI & GenAI</h3>
+                            <p class="text-slate-400 leading-relaxed mb-8">
+                                We engineer autonomous intelligent systems using <b>Agentic AI</b> and <b>Multimodal
+                                    LLMs</b>. From training self-evolving <b>Neural Networks</b> to deploying predictive
+                                <b>Deep Learning</b> models, we operationalize state-of-the-art algorithms.
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    NLP & Transformers</li>
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Computer Vision</li>
+                                <li
+                                    class="px-4 py-2 bg-white/10 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Reinforcement Learning</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+
+                    <div
+                        class="service-card sticky top-40 bg-[#C8102E] text-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-black/20 text-white rounded-2xl flex items-center justify-center mb-8">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight">AI-Native Quality</h3>
+                            <p class="text-white/90 leading-relaxed mb-8">
+                                Traditional testing isn't enough. We utilize <b>AI-Driven Test Automation</b> to
+                                generate synthetic test data and implement <b>Self-Healing Scripts</b>. Our models
+                                predict code defects before they even reach the repository.
+                                <br>
+                                <br>
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Synthetic Data</li>
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Self-Healing Tests</li>
+                                <li
+                                    class="px-4 py-2 bg-black/20 rounded-lg text-xs font-bold uppercase tracking-wide text-white">
+                                    Defect Prediction</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto bg-black/20">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+
+                    <div
+                        class="service-card sticky top-44 bg-white rounded-[2.5rem] p-10 md:p-16 shadow-xl border border-slate-100 flex flex-col md:flex-row gap-12 group transition-transform duration-500">
+                        <div class="md:w-1/2 flex flex-col justify-center">
+                            <div
+                                class="w-14 h-14 bg-red-50 text-[#C8102E] rounded-2xl flex items-center justify-center mb-8">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl font-bold mb-6 tracking-tight text-slate-900">Advanced Cyber Defense
+                            </h3>
+                            <p class="text-slate-500 leading-relaxed mb-8">
+                                Secure your perimeter with <b>Zero Trust Architecture</b> and AI-driven <b>XDR</b>
+                                protocols. We implement <b>Post-Quantum Cryptography</b> and automated threat hunting to
+                                neutralize sophisticated state-level adversaries.
+                            </p>
+                            <ul class="flex gap-3 flex-wrap">
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    Zero Trust</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-slate-700">
+                                    DevSecOps</li>
+                                <li
+                                    class="px-4 py-2 bg-slate-100 rounded-lg text-xs font-bold uppercase tracking-wide text-[#C8102E]">
+                                    Quantum Encryption</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 relative overflow-hidden rounded-2xl h-[300px] md:h-auto">
+                            <img src="https://images.unsplash.com/photo-1632910121591-29e2484c0259?q=80&w=1331&auto=format&fit=crop"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+
+                </div>
         </section>
 
 
@@ -471,8 +583,10 @@
                                 <div
                                     class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mb-8 text-[#C8102E]">
                                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <circle cx="7" cy="17" r="2"></circle>
+                                        <circle cx="17" cy="17" r="2"></circle>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                            d="M5 17H3v-4c0-1.1.9-2 2-2h1.5l2-4h7l2 4H19c1.1 0 2 .9 2 2v4h-2m-4 0h-6">
                                         </path>
                                     </svg>
                                 </div>
@@ -482,9 +596,9 @@
                                     productive from day one."
                                 </p>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white">TechAuto Global</h4>
-                                    <p class="text-xs font-bold text-white uppercase tracking-widest mt-2">Automotive
-                                        Partner</p>
+                                    <h4 class="text-xl font-bold text-white">Automotive
+                                        Partner</h4>
+
                                 </div>
                             </div>
 
@@ -503,9 +617,8 @@
                                     seamlessly with our on-site staff. The technical screening was spot on."
                                 </p>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white">FinCorp Systems</h4>
-                                    <p class="text-xs font-bold text-white uppercase tracking-widest mt-2">Finance
-                                        Client</p>
+                                    <h4 class="text-xl font-bold text-white">Finance
+                                        Client</h4>
                                 </div>
                             </div>
 
@@ -524,9 +637,7 @@
                                     60% within the first quarter. Truly engineering excellence."
                                 </p>
                                 <div>
-                                    <h4 class="text-xl font-bold text-white">CyberCore Inc.</h4>
-                                    <p class="text-xs font-bold text-white uppercase tracking-widest mt-2">Tech Partner
-                                    </p>
+                                    <h4 class="text-xl font-bold text-white">Tech Partner</h4>
                                 </div>
                             </div>
 
@@ -546,8 +657,6 @@
                                 </p>
                                 <div>
                                     <h4 class="text-xl font-bold text-white">HealthPlus</h4>
-                                    <p class="text-xs font-bold text-white uppercase tracking-widest mt-2">Healthcare
-                                        Client</p>
                                 </div>
                             </div>
 
@@ -599,7 +708,7 @@
                             </div>
                         </div>
 
-                        <div
+                        <!-- <div
                             class="md:row-span-2 bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-xl flex flex-col">
                             <h4 class="text-xl font-bold text-gray-900 mb-8">Open Roles</h4>
 
@@ -662,21 +771,26 @@
                                     class="text-xs font-bold text-gray-400 hover:text-[#C8102E] transition-colors uppercase tracking-widest">View
                                     All Openings</a>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div
                             class="bg-[#C8102E] rounded-[2.5rem] p-8 text-white flex flex-col justify-center items-center text-center group hover:scale-[1.02] transition-transform">
-                            <div class="mb-4 bg-white/20 p-4 rounded-full">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="text-2xl font-bold mb-2">Fast-Track Growth</h4>
-                            <p class="text-xs text-white/80">Mentorship from industry veterans.</p>
+                            <a href="#contact">
+                                <div class="mb-4 bg-white/20 p-4 rounded-full">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                            <a href="#contact">
+                                <h4 class="text-2xl font-bold mb-2">Fast-Track Growth</h4>
+                                <p class="text-xs text-white/80">Mentorship from industry veterans.</p>
+                            </a>
                         </div>
 
-                        <div
+                        <!-- <div
                             class="bg-white border border-gray-200 rounded-[2.5rem] p-8 flex flex-col justify-center relative overflow-hidden group">
                             <h4 class="text-gray-900 font-bold text-lg mb-2 relative z-10">Don't see your role?</h4>
                             <p class="text-gray-500 text-xs mb-6 relative z-10">
@@ -692,7 +806,7 @@
                             <div
                                 class="absolute -bottom-10 -right-10 w-32 h-32 bg-gray-100 rounded-full group-hover:scale-150 transition-transform duration-500">
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -842,7 +956,7 @@
     <script src="js/main.js"></script>
 </body>
 
-<!-- Preloader -->
+Preloader
 <div id="preloader"
     class="fixed inset-0 z-[99999] bg-[#050505] flex flex-col items-center justify-center transition-transform duration-1000 cubic-bezier(0.76, 0, 0.24, 1)">
 
@@ -862,6 +976,5 @@
     </div>
 
 </div>
-
 
 </html>
