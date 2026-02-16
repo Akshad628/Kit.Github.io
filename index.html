@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KITs Inc</title>
@@ -16,6 +16,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+</head> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KITs Inc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.0/build/spline-viewer.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.46/build/spline-viewer.js"></script>
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+</script>
+
+
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-[#C8102E] selection:text-white overflow-x-hidden">
@@ -161,7 +190,8 @@
                     </div>
                 </div>
 
-                <div class="reveal-slide-left relative w-full max-w-lg mx-auto lg:mr-0 mt-8 lg:mt-0">
+                <!-- console or terminal -->
+                <!-- <div class="reveal-slide-left relative w-full max-w-lg mx-auto lg:mr-0 mt-8 lg:mt-0">
                     <div
                         class="bg-[#0f0f0f]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
                         <div class="bg-white/5 px-4 py-3 flex items-center justify-between border-b border-white/5">
@@ -186,6 +216,27 @@
                     <div
                         class="absolute -bottom-10 -left-10 w-24 h-24 border-b-2 border-l-2 border-white/10 rounded-bl-3xl -z-10 hidden md:block">
                     </div>
+                </div> -->
+
+
+                <!--splin bob animation-->
+                <!-- <div
+                    class="reveal-slide-left relative w-full lg:w-[600px] mx-auto mt-8 lg:mt-0 h-[450px] md:h-[600px] md:-mt-20 flex items-center justify-center">
+
+                    <div class="absolute inset-0 z-20 w-full h-full cursor-default"></div>
+
+                    <spline-viewer url="https://prod.spline.design/3Pu2lgCbPReMQ8FI/scene.splinecode"
+                        events-target="global" loading-anim-type="spinner"
+                        class="w-full h-full scale-125 drop-shadow-2xl relative z-10">
+                    </spline-viewer>
+
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#C8102E] rounded-full blur-[100px] -z-10 opacity-20 animate-pulse pointer-events-none">
+                    </div>
+
+                </div> -->
+                <div id="eve-container" style="width: 100%; height: 600px; position: relative;">
+                    <canvas id="eve-canvas"></canvas>
                 </div>
             </div>
         </section>
@@ -197,14 +248,37 @@
                 <div class="reveal-slide-right">
                     <span class="text-[#C8102E] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Who We
                         Are</span>
+
                     <h2 class="text-4xl md:text-7xl font-extrabold text-slate-900 mb-8 tracking-tighter leading-tight">
                         Digital <br><span class="text-slate-300 italic">Excellence.</span>
                     </h2>
+
                     <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed text-justify">
                         Our services are designed to support enterprises at every stage of their digital journey.
                         Through expert IT consulting, professional services, and workforce solutions, we help
                         organizations modernize operations, strengthen security, and unlock innovation with confidence.
                     </p>
+
+                    <div class="inline-block group cursor-default transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="text-6xl md:text-8xl font-black tracking-tighter text-[#C8102E] transition-transform duration-500 group-hover:scale-110">
+                                10+
+                            </span>
+
+                            <div
+                                class="text-left border-l-4 border-[#C8102E] pl-4 transition-colors duration-500 group-hover:border-slate-900">
+                                <span
+                                    class="block text-sm font-bold uppercase tracking-[0.2em] text-[#C8102E] opacity-70">Years
+                                    of</span>
+                                <span
+                                    class="block text-2xl md:text-3xl font-black uppercase text-[#C8102E] leading-none tracking-tight">Service</span>
+                            </div>
+                        </div>
+
+                        <div class="h-1 w-0 bg-[#C8102E] mt-2 transition-all duration-500 group-hover:w-full"></div>
+                    </div>
+
                 </div>
 
                 <div class="reveal-slide-left relative h-[400px] md:h-[600px] w-full">
@@ -303,7 +377,7 @@
                     </div>
                 </div>
 
-                <div
+                <!-- <div
                     class="service-card sticky top-24 bg-[#0a0a0a] text-white rounded-[2.5rem] p-6 md:p-16 shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 group transition-transform duration-500">
                     <div class="md:w-1/2 flex flex-col justify-center">
                         <div
@@ -336,7 +410,7 @@
                         <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800"
                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
-                </div>
+                </div> -->
 
                 <div
                     class="service-card sticky top-28 bg-[#C8102E] text-white rounded-[2.5rem] p-6 md:p-16 shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 group transition-transform duration-500">
@@ -848,7 +922,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

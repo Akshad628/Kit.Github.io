@@ -1,3 +1,4 @@
+
 // 1. INITIALIZE LENIS SMOOTH SCROLL
 const lenis = new Lenis({
     duration: 1.2,
@@ -361,46 +362,291 @@ mobileLinks.forEach(link => {
     });
 });
 
-// 12. TERMINAL TYPING EFFECT
-const terminalContent = document.getElementById('terminal-content');
-if (terminalContent) {
-    const logs = [
-        { text: "> ESTABLISHING SECURE CONNECTION...", color: "text-gray-400" },
-        { text: "> ACCESSING NEURAL_NET_V5 [ROOT]", color: "text-white" },
-        { text: "> ...", color: "text-gray-500" },
-        { text: "> BYPASSING FIREWALL... SUCCESS", color: "text-green-400" },
-        { text: "> LOAD MODULE: AGENTIC_AI_WORKFORCE", color: "text-white" },
-        { text: "> OPTIMIZING VECTORS... 99.9%", color: "text-blue-400" },
-        { text: "> SCANNING FOR VULNERABILITIES...", color: "text-gray-400" },
-        { text: "> 0 THREATS DETECTED. ZERO_TRUST ACTIVE.", color: "text-green-400" },
-        { text: "> INITIATING DEPLOYMENT SEQUENCE...", color: "text-[#C8102E]" },
-        { text: "> WELCOME TO KRISINTEK.", color: "text-white font-bold" }
-    ];
+// // 12. TERMINAL TYPING EFFECT
+// const terminalContent = document.getElementById('terminal-content');
+// if (terminalContent) {
+//     const logs = [
+//         { text: "> ESTABLISHING SECURE CONNECTION...", color: "text-gray-400" },
+//         { text: "> ACCESSING NEURAL_NET_V5 [ROOT]", color: "text-white" },
+//         { text: "> ...", color: "text-gray-500" },
+//         { text: "> BYPASSING FIREWALL... SUCCESS", color: "text-green-400" },
+//         { text: "> LOAD MODULE: AGENTIC_AI_WORKFORCE", color: "text-white" },
+//         { text: "> OPTIMIZING VECTORS... 99.9%", color: "text-blue-400" },
+//         { text: "> SCANNING FOR VULNERABILITIES...", color: "text-gray-400" },
+//         { text: "> 0 THREATS DETECTED. ZERO_TRUST ACTIVE.", color: "text-green-400" },
+//         { text: "> INITIATING DEPLOYMENT SEQUENCE...", color: "text-[#C8102E]" },
+//         { text: "> WELCOME TO KRISINTEK.", color: "text-white font-bold" }
+//     ];
 
-    let logIndex = 0;
-    let charIndex = 0;
+//     let logIndex = 0;
+//     let charIndex = 0;
 
-    function typeLog() {
-        if (logIndex < logs.length) {
-            const currentLog = logs[logIndex];
-            if (charIndex === 0) {
-                const line = document.createElement('div');
-                line.className = `${currentLog.color} font-mono tracking-wide`;
-                line.id = `log-${logIndex}`;
-                terminalContent.appendChild(line);
-            }
-            const lineElement = document.getElementById(`log-${logIndex}`);
-            lineElement.textContent += currentLog.text.charAt(charIndex);
-            charIndex++;
-            terminalContent.scrollTop = terminalContent.scrollHeight;
-            if (charIndex < currentLog.text.length) {
-                setTimeout(typeLog, Math.random() * 60 + 20);
-            } else {
-                charIndex = 0;
-                logIndex++;
-                setTimeout(typeLog, 400);
-            }
+//     function typeLog() {
+//         if (logIndex < logs.length) {
+//             const currentLog = logs[logIndex];
+//             if (charIndex === 0) {
+//                 const line = document.createElement('div');
+//                 line.className = `${currentLog.color} font-mono tracking-wide`;
+//                 line.id = `log-${logIndex}`;
+//                 terminalContent.appendChild(line);
+//             }
+//             const lineElement = document.getElementById(`log-${logIndex}`);
+//             lineElement.textContent += currentLog.text.charAt(charIndex);
+//             charIndex++;
+//             terminalContent.scrollTop = terminalContent.scrollHeight;
+//             if (charIndex < currentLog.text.length) {
+//                 setTimeout(typeLog, Math.random() * 60 + 20);
+//             } else {
+//                 charIndex = 0;
+//                 logIndex++;
+//                 setTimeout(typeLog, 400);
+//             }
+//         }
+//     }
+//     setTimeout(typeLog, 2500);
+// }
+
+
+
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+// const container = document.getElementById('eve-container');
+// const canvas = document.getElementById('eve-canvas');
+
+// // 1. SCENE SETUP (Alpha: true makes background transparent)
+// const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+// camera.position.set(0, 0, 5);
+
+// const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+// renderer.setSize(container.clientWidth, container.clientHeight);
+// renderer.setPixelRatio(window.devicePixelRatio);
+// renderer.outputColorSpace = THREE.SRGBColorSpace; // Makes textures pop
+
+// // 2. LIGHTING (Essential for "Rendered" look)
+// const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+// scene.add(ambientLight);
+
+// const spotLight = new THREE.SpotLight(0xffffff, 5);
+// spotLight.position.set(5, 5, 5);
+// scene.add(spotLight);
+
+// // 3. LOAD EVE + ANIMATIONS
+// let eveModel, mixer;
+// const clock = new THREE.Clock(); // Required for animation timing
+
+// const loader = new GLTFLoader();
+// const dracoLoader = new DRACOLoader();
+// dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+// loader.setDRACOLoader(dracoLoader);
+
+// loader.load('./eveT.glb', (gltf) => {
+//     eveModel = gltf.scene;
+
+//     // POSITIONING
+//     eveModel.scale.set(0.8, 0.8, 0.8);
+//     eveModel.position.set(0, -1.2, 0.5); // Moves her to the right side
+//     scene.add(eveModel);
+
+//     // PLAY ANIMATION
+//     if (gltf.animations.length > 0) {
+//         mixer = new THREE.AnimationMixer(eveModel);
+//         const action = mixer.clipAction(gltf.animations[0]); // Plays the 1st animation
+//         action.play();
+//     }
+//     if (gltf.animations && gltf.animations.length > 0) {
+//         // 1. Create the mixer
+//         mixer = new THREE.AnimationMixer(model);
+
+//         // 2. Tell the mixer which animation to play (usually the first one, index 0)
+//         const action = mixer.clipAction(gltf.animations[0]);
+
+//         // 3. Start the animation
+//         action.play();
+
+//         console.log("Animation started!");
+//     }
+// }, undefined, (e) => console.error(e));
+
+
+// // 4. MOUSE INTERACTION (Subtle look-at)
+// const mouse = { x: 0, y: 0 };
+// window.addEventListener('mousemove', (e) => {
+//     mouse.x = (e.clientX / window.innerWidth) - 0.5;
+//     mouse.y = (e.clientY / window.innerHeight) - 0.5;
+// });
+
+// // 5. RENDER LOOP
+// function animate() {
+//     const delta = clock.getDelta();
+//     if (mixer) mixer.update(delta); // Updates the animation every frame
+
+//     if (eveModel) {
+//         // Smooth mouse following
+//         eveModel.rotation.y = THREE.MathUtils.lerp(eveModel.rotation.y, mouse.x * 0.5, 0.05);
+//         eveModel.rotation.x = THREE.MathUtils.lerp(eveModel.rotation.x, mouse.y * 0.2, 0.05);
+//     }
+//     // If the mixer exists, update it
+//     if (mixer) {
+//         mixer.update(delta);
+//     }
+
+//     // Your existing mouse rotation code...
+//     if (eveModel) {
+//         eveModel.rotation.y = THREE.MathUtils.lerp(eveModel.rotation.y, mouse.x * 0.8, 0.1);
+//     }
+
+
+//     renderer.render(scene, camera);
+//     requestAnimationFrame(animate);
+
+
+
+// }
+// animate();
+
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+
+const container = document.getElementById('eve-container');
+const canvas = document.getElementById('eve-canvas');
+
+// 1. SCENE SETUP
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.position.set(0, 0, 5);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+// 2. LIGHTING
+const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+directionalLight.position.set(5, 5, 5);
+scene.add(directionalLight);
+
+// 3. LOAD EVE + ANIMATIONS
+let eveModel, mixer;
+const clock = new THREE.Clock();
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+
+const loader = new GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
+
+loader.load('./EVEB.glb', (gltf) => {
+    eveModel = gltf.scene;
+    eveModel.scale.set(0.8, 0.8, 0.8);
+    eveModel.position.set(0, -1.2, 0);
+    scene.add(eveModel);
+
+    if (gltf.animations && gltf.animations.length > 0) {
+        mixer = new THREE.AnimationMixer(eveModel);
+        const action = mixer.clipAction(gltf.animations[0]);
+        action.play();
+    }
+}, undefined, (error) => console.error('Error loading model:', error));
+
+// 4. MOUSE INTERACTION
+const mouse = { x: 0, y: 0 };
+window.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    mouse.x = ((e.clientX - rect.left) / rect.width) - 0.5;
+    mouse.y = ((e.clientY - rect.top) / rect.height) - 0.5;
+});
+
+// Window Resize Handling
+window.addEventListener('resize', () => {
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+});
+
+// 5. RENDER LOOP
+function animate() {
+    requestAnimationFrame(animate);
+    const delta = clock.getDelta();
+
+    if (mixer) mixer.update(delta);
+
+    if (eveModel) {
+        eveModel.rotation.y = THREE.MathUtils.lerp(eveModel.rotation.y, mouse.x * 0.8, 0.1);
+        eveModel.rotation.x = THREE.MathUtils.lerp(eveModel.rotation.x, mouse.y * 0.3, 0.1);
+    }
+
+    renderer.render(scene, camera);
+}
+
+animate();
+
+
+
+// 1. Setup Raycaster and Mouse for clicking
+const raycaster = new THREE.Raycaster();
+const clickMouse = new THREE.Vector2();
+
+// 2. Add Click Event Listener to the canvas
+renderer.domElement.addEventListener('click', (event) => {
+    // Calculate mouse position in normalized device coordinates (-1 to +1)
+    const rect = renderer.domElement.getBoundingClientRect();
+    clickMouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    clickMouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    // Update the raycaster with the camera and mouse position
+    raycaster.setFromCamera(clickMouse, camera);
+
+    // Check if the ray intersects the model
+    if (eveModel) {
+        const intersects = raycaster.intersectObject(eveModel, true);
+
+        if (intersects.length > 0) {
+            // Trigger the existing chat window logic from your index.html
+            openAiChat();
         }
     }
-    setTimeout(typeLog, 2500);
+});
+
+// 3. Function to trigger the Chat Widget (matches your existing UI logic)
+function openAiChat() {
+    const chatWindow = document.getElementById('chat-window');
+    if (chatWindow) {
+        chatWindow.classList.remove('invisible', 'opacity-0', 'scale-90', 'translate-y-10');
+        chatWindow.classList.add('opacity-100', 'scale-100', 'translate-y-0');
+
+        // Focus the input automatically
+        const chatInput = document.getElementById('chat-input');
+        if (chatInput) chatInput.focus();
+    }
+}
+
+
+
+
+// At the very end of main.js
+window.sendToGmail = function () {
+    const nameElement = document.getElementById('contact-name');
+    const messageElement = document.getElementById('contact-message');
+
+    if (!nameElement || !messageElement) return;
+
+    const name = nameElement.value;
+    const message = messageElement.value;
+
+    if (!name || !message) {
+        alert("Please fill out both fields.");
+        return;
+    }
+
+    const subject = `${name} - Website Inquiry`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@krisintek.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+    window.open(gmailUrl, '_blank');
 }
